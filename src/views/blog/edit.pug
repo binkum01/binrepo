@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  h1.mb-4 Edit Blog Post
+  
+  form(action=`/blog/${post.id}` method="POST")
+    .mb-3
+      label.form-label(for="title") Title
+      input#title.form-control(type="text" name="title" value=post.title required)
+    
+    .mb-3
+      label.form-label(for="location") Location
+      input#location.form-control(type="text" name="location" value=post.location required)
+    
+    .mb-3
+      label.form-label(for="content") Content
+      textarea#content.form-control(name="content" rows="6" required)= post.content
+    
+    .mb-3
+      label.form-label(for="imageUrl") Image URL
+      input#imageUrl.form-control(type="url" name="imageUrl" value=post.imageUrl)
+    
+    .mb-3
+      label.form-label(for="tags") Tags (comma-separated)
+      input#tags.form-control(type="text" name="tags" value=post.tags.join(', '))
+    
+    .d-grid.gap-2.d-md-flex
+      button.btn.btn-primary(type="submit") Update Post
+      a.btn.btn-outline-secondary(href=`/blog/${post.id}`) Cancel

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .jumbotron.bg-light.p-5.rounded-3
+    h1.display-4 Welcome to Our Travel Blog
+    p.lead Share your adventures and discover amazing destinations around the world
+    hr.my-4
+    p Create your own travel story or explore others' experiences
+    a.btn.btn-primary.btn-lg(href="/blog/new") Share Your Journey
+
+  if recentPosts && recentPosts.length > 0
+    h2.mt-5 Recent Posts
+    .row.row-cols-1.row-cols-md-3.g-4
+      each post in recentPosts
+        .col
+          .card.h-100
+            if post.imageUrl
+              img.card-img-top(src=post.imageUrl alt=post.title)
+            .card-body
+              h5.card-title= post.title
+              p.card-text= post.location
+              a.btn.btn-primary(href=`/blog/${post.id}`) Read More

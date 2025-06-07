@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .error-container.text-center.mt-5
+    h1.text-danger Error
+    if message
+      p.lead= message
+    else
+      p.lead Something went wrong
+    
+    .mt-4
+      a.btn.btn-primary(href='/') Go Home
+      a.btn.btn-outline-primary.ms-2(href='/blog') View Blog

@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+  .d-flex.justify-content-between.align-items-center.mb-4
+    h1 Travel Stories
+    a.btn.btn-primary(href="/blog/new")
+      i.bi.bi-plus-circle.me-2
+      | Share Your Journey
+
+  .row.row-cols-1.row-cols-md-2.g-4
+    each post in posts
+      .col
+        .card.h-100
+          if post.imageUrl
+            img.card-img-top(src=post.imageUrl alt=post.title)
+          .card-body
+            h5.card-title= post.title
+            p.card-text.text-muted= post.location
+            p.card-text= post.content.substring(0, 150) + '...'
+            .d-flex.justify-content-between.align-items-center
+              small.text-muted Posted by #{post.author}
+              small.text-muted= new Date(post.date).toLocaleDateString()
+          .card-footer
+            .btn-group
+              a.btn.btn-primary(href=`/blog/${post.id}`) Read More
+              a.btn.btn-outline-secondary(href=`/blog/${post.id}/edit`) Edit
+              form.d-inline(action=`/blog/${post.id}/delete` method='POST' onsubmit='return confirm("Are you sure?")')
+                button.btn.btn-outline-danger(type='submit') Delete
+
+  if !posts || posts.length === 0
+    .alert.alert-info No blog posts yet.
+    a.btn.btn-primary(href='/blog/new') Create First Post

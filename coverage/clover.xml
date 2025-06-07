@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1749291801820" clover="3.2.0">
+  <project timestamp="1749291801821" name="All files">
+    <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="9" coveredmethods="9" elements="27" coveredelements="27" complexity="0" loc="16" ncloc="16" packages="1" files="1" classes="1"/>
+    <file name="blog.service.ts" path="C:\Users\PC\Testworkspace\my-express-pug-app\src\services\blog.service.ts">
+      <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="9" coveredmethods="9"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="9" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="12" count="3" type="stmt"/>
+      <line num="16" count="6" type="stmt"/>
+      <line num="21" count="6" type="stmt"/>
+      <line num="22" count="6" type="stmt"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="27" count="2" type="cond" truecount="1" falsecount="0"/>
+      <line num="29" count="1" type="stmt"/>
+      <line num="33" count="1" type="stmt"/>
+      <line num="37" count="2" type="stmt"/>
+      <line num="38" count="2" type="cond" truecount="1" falsecount="0"/>
+      <line num="40" count="1" type="stmt"/>
+      <line num="41" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

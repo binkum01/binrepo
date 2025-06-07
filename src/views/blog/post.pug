@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+  .blog-post
+    h1.mb-3= post.title
+    .d-flex.justify-content-between.align-items-center.mb-4
+      .metadata
+        span.text-muted
+          i.bi.bi-geo-alt
+          |  #{post.location}
+        span.text-muted.ms-3
+          i.bi.bi-person
+          |  Posted by #{post.author}
+        span.text-muted.ms-3
+          i.bi.bi-calendar
+          |  #{new Date(post.date).toLocaleDateString()}
+      .actions
+        a.btn.btn-outline-primary.me-2(href=`/blog/${post.id}/edit`) Edit Post
+        form.d-inline(action=`/blog/${post.id}/delete` method='POST' onsubmit='return confirm("Are you sure you want to delete this post?")')
+          button.btn.btn-outline-danger(type='submit') Delete Post
+
+    if post.imageUrl
+      img.img-fluid.rounded.mb-4(src=post.imageUrl alt=post.title)
+    
+    .content.mb-4
+      p.lead= post.content
+
+    if post.tags && post.tags.length > 0
+      .tags.mb-4
+        each tag in post.tags
+          span.badge.bg-secondary.me-2= tag
+
+    hr
+    .mt-4
+      a.btn.btn-primary(href='/blog') Back to All Posts
