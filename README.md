@@ -1,4 +1,4 @@
-# My Express Pug App
+# My Express Pug Application
 
 This is a simple Express application built with TypeScript and Pug as the templating engine.
 
