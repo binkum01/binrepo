@@ -2,7 +2,7 @@
 
 This is a simple Express application built with TypeScript and Pug as the templating engine.
 
-## Project Structure for this application
+## Project Structure for this test application
 
 ```
 my-express-pug-app
