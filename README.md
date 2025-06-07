@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # My Express Pug App
 
 This is a simple Express application built with TypeScript and Pug as the templating engine.
@@ -40,7 +39,4 @@ npm start
 
 ## License
 
-This project is licensed under the MIT License.
-=======
-# binrepo
->>>>>>> 33fbb55908edff94dd1224cbcf5937c51b809e2b
+This project is licensed under the BK License.
